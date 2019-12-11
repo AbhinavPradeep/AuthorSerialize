@@ -28,5 +28,15 @@ namespace AuthorSerialize
 
             return Kishimoto;
         }
+
+        /* Create a saveauthor methodwhich takes a author as parameter and 
+        saves the author to a file of his first name.
+        Call save author from program , after moving the jsonserializer
+        */
+
+
+        /* stretch goal -- Create a loadauthor method which takes a author name
+        and deserializes the author from file
+        */
     }
 }

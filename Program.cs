@@ -13,7 +13,7 @@ namespace AuthorSerialize
 
             author = factory.CreateAuthor();
 
-            string str = JsonConvert.SerializeObject(author,Formatting.Indented);
+            string str = JsonConvert.SerializeObject(author, Formatting.Indented);
             System.Console.WriteLine(str);
 
             //serialize to a file --> serialize means to convert an object 
@@ -23,10 +23,21 @@ namespace AuthorSerialize
             //Serialization is differnt than converting the properties of a type to string
             //and writing them to a file. Here the responsibility of storing the memory based
             //representation of the object to disk belongs to the object itself. 
-            using (StreamWriter file = File.CreateText(@".\author.json"))
+            using (StreamWriter file = File.CreateText(@".\authors\" + author.FirstName + ".json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, author);
+            }
+            // read file into a string and deserialize JSON to a type
+            Author  author1 = null;
+            author1 = JsonConvert.DeserializeObject<Author>(File.ReadAllText(@".\authors\" + author.FirstName + ".json"));
+
+            // deserialize JSON directly from a file
+            using (StreamReader file = File.OpenText(@".\authors\" + author.FirstName + ".json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                Author aurhor2  = null;
+                aurhor2 = (Author)serializer.Deserialize(file, typeof(Author));
             }
 
 

@@ -1,0 +1,22 @@
+{
+    "FirstName": "Mashashi",
+    "LastName": "Kishimoto",
+    "Address": {
+        "Country": "Japan",
+        "State": "Okoyama Prefecture",
+        "Street": "Nagi",
+        "HouseNum": 4269
+    },
+    "Books": [
+        {
+            "BookName": "Naruto",
+            "Genre": "Shounen",
+            "ISBNcode": "1212212"
+        },
+        {
+            "BookName": "Boruto Uzumaki",
+            "Genre": "Shounen",
+            "ISBNcode": "343434"
+        }
+    ]
+}
